@@ -1,0 +1,25 @@
+.top-wrapp {
+    padding-bottom: 10px;
+}
+
+.btnBiography {
+    padding: 0px;
+    height: 38px;
+}
+
+.pageHeader {
+    padding: 50px;
+}
+
+.pageDetailsPadding {
+    padding:  30px;
+}
+
+.pageAdvPadding {
+    padding-top: 30px;
+}
+
+.navPadding {
+    margin-left: 30px;
+    padding-top: 20px
+}
