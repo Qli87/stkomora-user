@@ -42,7 +42,7 @@ export default class Header extends React.Component {
                                 <li><NavLink to="/pocetna">Početna</NavLink></li>
                                 <li><NavLink to="/onama">O nama</NavLink></li>
                                 <li><NavLink to="/vijesti">Vijesti</NavLink></li>
-                                <li><NavLink to="#8">Članovi komore</NavLink></li>
+                                <li><NavLink to="/clanovi">Članovi komore</NavLink></li>
                                 <li><NavLink to="/oglasi">Oglasi</NavLink></li>
                                 <li><NavLink to="/kontakt">Kontakt</NavLink></li>
 

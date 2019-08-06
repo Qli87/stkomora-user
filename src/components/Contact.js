@@ -3,6 +3,28 @@ import { withRouter } from 'react-router-dom'
 import PageHeader from './singleComponents/PageHeader';
 
 class Contact extends React.Component {
+
+	constructor(props) {
+		super(props)
+		this.state = {
+			details: []
+		}
+	}
+
+	componentDidMount(){
+		this.setup()
+	}
+
+	componentWillReceiveProps(nextProps) {
+		this.setState({
+			details: nextProps.details[0]
+		})
+	}
+
+	setup = () => {
+		this.props.getDetails()
+	}
+
     render(){
         return(
             <div>
@@ -53,23 +75,23 @@ class Contact extends React.Component {
 									<i className="fa fa-home fa-2x fa-primary"></i>
 									<h6>Adresa</h6>
 									<p>
-									Jovana Tomaševića 13/1<br />
-									Podgorica
+									{ this.state.details.address }<br />
+									{ this.state.details.city }
 									</p>
 								</li>
 								<li>
 									<i className="fa fa-phone fa-2x fa-primary"></i>
 									<h6>Kontakt telefoni</h6>
 									<p>
-										+382 020/220-833<br />
-										+382 020/220-894
+										{ this.state.details.phone1} <br />
+										{ this.state.details.phone2}
 									</p>
 								</li>
 								<li>
 									<i className="fa fa-envelope fa-2x fa-primary"></i>
 									<h6>Email</h6>
 									<p>
-									info@stomkomcg.me
+									{ this.state.details.email }
 									</p>
 								</li>
 							</ul>
@@ -80,11 +102,9 @@ class Contact extends React.Component {
 			</div>
 		</div>
 			<div className="map-wrapper">
-				<div id="map" className="maps"></div>
-				<div className="item-map" 
-					data-lat="-6.921167" 
-					data-lng="107.610467" 
-					data-address="Jl. Asia Afrika, Kota Bandung, Jawa Barat, Indonesia">
+				<div className="item-map" >
+					<iframe title="title" width="100%" height="500" src="https://maps.google.com/maps?width=100%&amp;height=500&amp;hl=en&amp;coord=42.4424238,19.2552018&amp;q=Stomatolo%C5%A1ka%20komora%20Crne%20Gore+(Stomatoloska%20Komora)&amp;ie=UTF8&amp;t=k&amp;z=19&amp;iwloc=B&amp;output=embed" 
+					style={{'frameBorder': '0', 'scrolling': 'no', 'marginHeight': '0', 'marginWidth':'0'}}></iframe>
 				</div>
 			</div>
 		</div>

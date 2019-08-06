@@ -14,13 +14,17 @@ class Advertisment extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getAdvertisments()
+        this.setup()
     }
 
     componentWillReceiveProps(nextProps){
         this.setState({
             advs: nextProps.advertisments
         })
+    }
+
+    setup = () => {
+        this.props.getAdvertisments()
     }
 
     render() {

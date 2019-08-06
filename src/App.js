@@ -16,6 +16,7 @@ class App extends React.Component {
             <Route path='/kategorija_vijesti' component={PageRouting} />
             {/* <Route path='/detaljnije' component={PageRouting} /> */}
             <Route path='/oglasi' component={PageRouting}></Route>
+            <Route path='/clanovi' component={PageRouting}></Route>
             <Route path='/' component={Page404} />
           </Switch>
       </Router>

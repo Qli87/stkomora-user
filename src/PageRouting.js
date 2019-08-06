@@ -2,15 +2,16 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { userPath } from './constants/user.constants'
 import HomePage from './components/HomePage';
-import Contact from './components/Contact';
+import ContactCnt from './containers/ContactCnt';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import AboutCnt from './containers/AboutCnt';
 import BiographyCnt from './containers/BiographyCnt';
 import NewsCnt from './containers/NewsCnt';
 import NoveltyDetailsCnt from './containers/NoveltyDetailsCnt';
 import NewsForCategoryCnt from './containers/NewsForCategoryCnt';
 import AdvertismentCnt from './containers/AdvertismentCnt';
+import FooterCnt from './containers/FooterCnt';
+import MembersCnt from './containers/MembersCnt';
 
 const routes = [
     {
@@ -43,8 +44,12 @@ const routes = [
         main: () => <div> <AdvertismentCnt /> </div>
     },
     {
+        path: userPath.members,
+        main: () => <div> <MembersCnt /> </div>
+    },
+    {
         path: userPath.contact,
-        main: () => <div> <Contact /> </div>
+        main: () => <div> <ContactCnt /> </div>
     }
 ]
 
@@ -66,7 +71,7 @@ class PageRouting extends React.Component {
                             />
                         ))
                     }
-                    <Footer />
+                    <FooterCnt />
                 </div>
             </Router>
             

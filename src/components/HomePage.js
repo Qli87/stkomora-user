@@ -128,7 +128,7 @@ class HomePage extends React.Component {
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="thumbnail">
-                                    <img src="img/img02.jpg" className="img-responsive" alt="" />
+                                    <img src="img/img001.jpg" className="img-responsive" alt="" />
                                     <div className="caption">
                                         <i className="fa fa-briefcase fa-3x icon-circle fa-default"></i>
                                         <h5>Članovi komore</h5>
@@ -140,7 +140,7 @@ class HomePage extends React.Component {
                             </div>
                             <div className="col-md-4">
                                 <div className="thumbnail">
-                                    <img src="img/img03.jpg" className="img-responsive" alt="" />
+                                    <img src="img/img002.jpg" className="img-responsive" alt="" />
                                     <div className="caption">
                                         <i className="fa fa-headphones fa-3x icon-circle fa-primary"></i>
                                         <h5>Član komore</h5>
@@ -152,7 +152,7 @@ class HomePage extends React.Component {
                             </div>
                             <div className="col-md-4">
                                 <div className="thumbnail">
-                                    <img src="img/img03.jpg" className="img-responsive" alt="" />
+                                    <img src="img/img003.png" className="img-responsive" alt="" />
                                     <div className="caption">
                                         <i className="fa fa-flask fa-3x icon-circle fa-default"></i>
                                         <h5>Počastni članovi</h5>

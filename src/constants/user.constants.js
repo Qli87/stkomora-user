@@ -6,5 +6,6 @@ export const userPath = {
     biography: '/biografija',
     category: '/kategorija_vijesti',
     noveltyDetails: '/detaljnije',
-    advertisment: '/oglasi'
+    advertisment: '/oglasi',
+    members: '/clanovi'
 }

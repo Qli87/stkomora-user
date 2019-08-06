@@ -5,6 +5,9 @@
             var center = {lat: -6.921167, lng: 107.610467};
             var locations = [];
 
+           
+
+
             $(".item-map").each(function(){
                 var getLat = $(this).data("lat"),
                     getLng = $(this).data("lng"),

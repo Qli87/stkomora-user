@@ -15,8 +15,7 @@ class NewsForCategory extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getNews()
-        this.props.getCategories()
+        this.setup()
     }
 
     componentWillReceiveProps(nextProps) {
@@ -26,8 +25,12 @@ class NewsForCategory extends React.Component {
         })
     }
 
+    setup = () => {
+        this.props.getNews()
+        this.props.getCategories()
+    }
+
     render() {
-        console.log(this.state);
         return (
             <div>
                 <PageHeader />

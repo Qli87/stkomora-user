@@ -2,6 +2,27 @@ import React from 'react'
 
 export default class Footer extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            details: []
+        }
+    }
+
+    componentDidMount() {
+        this.setup()
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            details: nextProps.details[0]
+        })
+    }
+
+    setup = () => {
+        this.props.getDetails();
+    }
+
     render() {
         return (
             <div>
@@ -58,12 +79,12 @@ export default class Footer extends React.Component {
                                 <div className="widget">
                                     <h5>Kontakt</h5>
                                     <div className="tweet">
-                                        <p>Adresa: Jovana Tomaševića 13/1, Podgorica</p>
-                                        <p>Tel1: +382 020/220-833 </p>
-                                        <p>Tel2: +382 020/220-894 </p>
-                                        <p>E-mail: info@stomkomcg.me</p>
-                                        <p>Radno vrijeme: Pon-Pet: 07:00-15:00</p>
-                                        <p>Br.žiro računa:</p>
+                                        <p>Adresa: {this.state.details.address || ""} , {this.state.details.city || ""}</p>
+                                        <p>Tel1: {this.state.details.phone1 || ""} </p>
+                                        <p>Tel2: {this.state.details.phone2 || ""} </p>
+                                        <p>E-mail: {this.state.details.email || ""}</p>
+                                        <p>Radno vrijeme: {this.state.details.work_time || ""} </p>
+                                        <p>Br.žiro računa: { this.state.details.bank_account || ""} </p>
                                     </div>
                                 </div>
                             </div>

@@ -12,7 +12,7 @@ class Biography extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getBiography()
+        this.setup()
     }
 
     componentWillReceiveProps(nextProps) {
@@ -21,6 +21,10 @@ class Biography extends React.Component {
         })
     }
 
+    setup = () => {
+        this.props.getBiography()
+    }
+ 
 
     render() {
         return(

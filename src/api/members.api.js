@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export function getMembers_api(){
-    return axios.get('')
+    return axios.get('http://www.mocky.io/v2/5d480fbd3300009287a3eceb')
 }
 
 export function getBoardMembers_api() {
