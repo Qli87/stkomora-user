@@ -4,11 +4,11 @@ export default class Member extends React.Component {
     render() {
         return (
             <tr>
-                <td> {this.props.id} </td>
-                <td> {this.props.name} </td>
-                <td> {this.props.phone} </td>
-                <td> {this.props.city} </td>
-                <td> {this.props.company} </td>
+                <td style={{'borderBottom':'1px solid lightblue'}}> {this.props.id} </td>
+                <td style={{'borderBottom':'1px solid lightblue'}}> {this.props.name} </td>
+                <td style={{'borderBottom':'1px solid lightblue'}}> {this.props.phone} </td>
+                <td style={{'borderBottom':'1px solid lightblue'}}> {this.props.city} </td>
+                <td style={{'borderBottom':'1px solid lightblue'}}> {this.props.company} </td>
             </tr>
         )
     }
