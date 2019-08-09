@@ -18,7 +18,8 @@ class Members extends React.Component {
             },
             activePage: 1,
             usersPerPage: 5,
-            numbersOfPages: 5
+            numbersOfPages: 5,
+            totalMembers: 0
         }
     }
 
@@ -34,7 +35,8 @@ class Members extends React.Component {
         }
         this.setState({
             members: nextProps.members,
-            data: pagMembers
+            data: pagMembers,
+            totalMembers: nextProps.members.length
         })
     }
 
@@ -44,12 +46,17 @@ class Members extends React.Component {
 
     search = (input) => {
         let filteredMembers = this.props.members
-        filteredMembers = filteredMembers.filter(item => {
-            return item.name.toLowerCase().search(
-                input.target.value.toLowerCase()) !== -1
-        })
+        if(input.target.value.length > 0) {
+            filteredMembers = filteredMembers.filter(item => {
+                return item.name.toLowerCase().search(
+                    input.target.value.toLowerCase()) !== -1
+            })
+        } else {
+         filteredMembers = this.props.members.slice(this.state.activePage*this.state.usersPerPage - this.state.usersPerPage,
+            this.state.activePage*this.state.usersPerPage, [])
+        }
         this.setState({
-            members: filteredMembers
+            data: filteredMembers
         })
     }
 
@@ -92,6 +99,8 @@ class Members extends React.Component {
                 return b.id - a.id
             }
         })
+
+
         if(direction === 'asc') {
             data.reverse()
         }
@@ -100,7 +109,10 @@ class Members extends React.Component {
                 column: column,
                 direction: direction
             },
-            members: data
+            // data: data
+            data: data.slice(this.state.activePage*this.state.usersPerPage - this.state.usersPerPage,
+                this.state.activePage*this.state.usersPerPage, []),
+            totalMembers: data.length
         })
     }
 
@@ -186,7 +198,7 @@ class Members extends React.Component {
                             <Pagination
                                 activePage={this.state.activePage}
                                 itemsCountPerPage={this.state.usersPerPage}
-                                totalItemsCount={this.props.members.length}
+                                totalItemsCount={this.state.totalMembers}
                                 onChange={this.setActivePage}
                             />
 
