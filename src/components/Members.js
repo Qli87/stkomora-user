@@ -17,14 +17,20 @@ class Members extends React.Component {
                 direction: 'desc'
             },
             activePage: 1,
-            usersPerPage: 5,
-            numbersOfPages: 5,
-            totalMembers: 0
+            usersPerPage: 2,
+            numberOfPagButton: 5,
+            totalMembers: 0,
+            searchField: false,
+            temporaryFiltered: []
         }
     }
 
     componentDidMount() {
         this.setup()
+    }
+
+    setup = () => {
+        this.props.getMembers()
     }
 
     componentWillReceiveProps(nextProps) {
@@ -40,25 +46,50 @@ class Members extends React.Component {
         })
     }
 
-    setup = () => {
-        this.props.getMembers()
-    }
-
     search = (input) => {
+        let searchF
         let filteredMembers = this.props.members
+        let temporaryCount = this.props.members.length
+        let _temporaryFiltered
+        let _temporaryNumberOfPages
         if(input.target.value.length > 0) {
+            searchF = true
             filteredMembers = filteredMembers.filter(item => {
                 return item.name.toLowerCase().search(
                     input.target.value.toLowerCase()) !== -1
             })
+            _temporaryFiltered = filteredMembers
+            _temporaryNumberOfPages = Math.round(filteredMembers.length / this.state.usersPerPage)
         } else {
-         filteredMembers = this.props.members.slice(this.state.activePage*this.state.usersPerPage - this.state.usersPerPage,
-            this.state.activePage*this.state.usersPerPage, [])
+         searchF = false
+         filteredMembers = this.props.members
+         temporaryCount  = filteredMembers.length
         }
         this.setState({
-            data: filteredMembers
+            data: filteredMembers.slice(this.state.activePage*this.state.usersPerPage - this.state.usersPerPage,
+                this.state.activePage*this.state.usersPerPage, []),
+            totalMembers: temporaryCount,
+            searchField: searchF,
+            temporaryFiltered: _temporaryFiltered,
+            numberOfPagButton: _temporaryNumberOfPages
         })
     }
+    
+
+    setActivePage = (currentPage) => {
+        let pagMembers
+        if(this.state.searchField === false) {
+            pagMembers = this.props.members
+        } else {
+            pagMembers = this.state.temporaryFiltered   
+        }
+        this.setState({
+            activePage: currentPage,
+            data: pagMembers.slice(currentPage*this.state.usersPerPage - this.state.usersPerPage,
+                    currentPage*this.state.usersPerPage, [])
+        })
+    }
+
 
     onSort = (column) => (e) => {
         const direction = this.state.sort.column ? (this.state.sort.direction === 'asc' ? 'desc' : 'asc') : 'desc';
@@ -99,8 +130,6 @@ class Members extends React.Component {
                 return b.id - a.id
             }
         })
-
-
         if(direction === 'asc') {
             data.reverse()
         }
@@ -116,15 +145,6 @@ class Members extends React.Component {
         })
     }
 
-    setActivePage = (currentPage) => {
-        let pagMembers = []
-        pagMembers = this.props.members.slice(currentPage*this.state.usersPerPage - this.state.usersPerPage,
-            currentPage*this.state.usersPerPage, [])
-        this.setState({
-            activePage: currentPage,
-            data: pagMembers
-        })
-    }
     
 
     render() {
@@ -199,6 +219,7 @@ class Members extends React.Component {
                                 activePage={this.state.activePage}
                                 itemsCountPerPage={this.state.usersPerPage}
                                 totalItemsCount={this.state.totalMembers}
+                                pageRangeDisplayed={this.state.numberOfPagButton}
                                 onChange={this.setActivePage}
                             />
 
