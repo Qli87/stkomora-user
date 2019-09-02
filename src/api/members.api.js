@@ -32,3 +32,15 @@ export function getMembersSouth_api () {
 export function getMembersNorth_api () {
     return axios.get('http://www.mocky.io/v2/5d417c333100007bc253942d')
 }
+
+// export function getBoardMembers_api() {
+//     return axios.get('')
+// }
+
+// export function addBoardMember_api() {
+//     //todo
+// }
+
+// export function deleteBoardMember_api() {
+//     //todo
+// }

@@ -14,7 +14,10 @@ class About extends React.Component {
             membersPg: [],
             membersNk: [],
             membersSouth: [],
-            membersNorth: []
+            membersNorth: [],
+            aboutContent: '',
+            aboutTitle: '',
+            parliamentContent: ''
         }
     }
 
@@ -29,16 +32,29 @@ class About extends React.Component {
         this.props.getMembersNk()
         this.props.getMembersSouth()
         this.props.getMemberNorth()
+        this.props.getContent()
     }
 
     componentWillReceiveProps(nextProps) {
+        // console.log(nextProps.content[0].aboutContent);
+        let aboutContent = ''
+        let aboutTitle = ''
+        let parliamentContent= ''
+        if(nextProps.content[0] !== undefined) {
+            aboutContent = nextProps.content[0].aboutContent
+            aboutTitle = nextProps.content[0].aboutTitle
+            parliamentContent = nextProps.content[0].parliamentContent
+        }
         this.setState({
             boardMembers: nextProps.boardMembers,
             membersCt: nextProps.membersCt,
             membersPg: nextProps.membersPg,
             membersNk: nextProps.membersNk,
             membersSouth: nextProps.membersSouth,
-            membersNorth: nextProps.membersNorth
+            membersNorth: nextProps.membersNorth,
+            aboutContent: aboutContent,
+            aboutTitle: aboutTitle,
+            parliamentContent: parliamentContent
         })
     }
 
@@ -53,10 +69,10 @@ class About extends React.Component {
                             <div className="col-md-4">
                                 <div className="title-head">
                                     <h4>O nama </h4>
-                                    <p>Osnivačka skupština je održana 16. decembra 2016. godine i to je datum koji predstavlja istorijski trenutak u crnogorskoj stomatologiji, a dana 25. aprila 2017. godine dobili smo i zvaničan status pravnog lica upisom u CRPS.</p>
+                                    { this.state.aboutTitle }
                                 </div>
                                 <p>
-                                    Izvršni odbor naše komore čini iskusni doktori stomatologije na čelu sa dr. Goranom Mandićem
+                                    { this.state.aboutContent }
                                 </p>
                             </div>
                             <div className="col-md-8">
@@ -208,8 +224,11 @@ class About extends React.Component {
                                 <div className="title-head pull-right">
                                     <h3>Skupština komore</h3>
                                 </div>
-                                <p>Skupština Stomatološke komore Crne Gore ima 31 člana. </p>
-                                <p>Članovi Skupštine biraju se proporcionalno, po područjima opština, srazmjerno broju doktora stomatologije</p>
+                                {/* <p>Skupština Stomatološke komore Crne Gore ima 31 člana. </p>
+                                <p>Članovi Skupštine biraju se proporcionalno, po područjima opština, srazmjerno broju doktora stomatologije</p> */}
+                                <p>
+                                    {this.state.parliamentContent}
+                                </p>
                             </div>
                         </div>
                     </div>
