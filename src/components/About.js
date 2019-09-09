@@ -124,10 +124,10 @@ class About extends React.Component {
 </div>
 <div className="progress">
   <div className="progress-bar" role="progressbar" style={{'width' : '100%'}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-</div> */}
+</div> 
 
 
-
+                                    {/* ukupno 31 clan */}
                                     <div className="progress type3">
                                         <div className="progress-bar" role="progressbar" data-value-progress="9">
                                             <span className="value-progress">00</span>
@@ -224,8 +224,6 @@ class About extends React.Component {
                                 <div className="title-head pull-right">
                                     <h3>Skupština komore</h3>
                                 </div>
-                                {/* <p>Skupština Stomatološke komore Crne Gore ima 31 člana. </p>
-                                <p>Članovi Skupštine biraju se proporcionalno, po područjima opština, srazmjerno broju doktora stomatologije</p> */}
                                 <p>
                                     {this.state.parliamentContent}
                                 </p>
@@ -306,9 +304,7 @@ class About extends React.Component {
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         )
     }
