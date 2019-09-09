@@ -45,7 +45,6 @@ export default class Header extends React.Component {
                                 <li><NavLink to="/clanovi">Članovi komore</NavLink></li>
                                 <li><NavLink to="/oglasi">Oglasi</NavLink></li>
                                 <li><NavLink to="/kontakt">Kontakt</NavLink></li>
-
                             </ul>
                         </div>
                     </div>

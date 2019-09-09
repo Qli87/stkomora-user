@@ -50,9 +50,9 @@ export default class Footer extends React.Component {
                                         <li><i className="fa fa-angle-double-right"></i> <a href="pocetna">Početna</a></li>
                                         <li><i className="fa fa-angle-double-right"></i> <a href="onama">O nama</a></li>
                                         <li><i className="fa fa-angle-double-right"></i> <a href="vijesti">Vijesti</a></li>
-                                        <li><i className="fa fa-angle-double-right"></i> <a href="#4">Članovi komore</a></li>
-                                        <li><i className="fa fa-angle-double-right"></i> <a href="#5">Oglasi</a></li>
-                                        <li><i className="fa fa-angle-double-right"></i> <a href="#6">Kontakt</a></li>
+                                        <li><i className="fa fa-angle-double-right"></i> <a href="clanovi">Članovi komore</a></li>
+                                        <li><i className="fa fa-angle-double-right"></i> <a href="oglasi">Oglasi</a></li>
+                                        <li><i className="fa fa-angle-double-right"></i> <a href="kontakt">Kontakt</a></li>
                                     </ul>
                                 </div>
                             </div>
