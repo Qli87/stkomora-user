@@ -17,7 +17,6 @@ class Novelty extends React.Component {
                         <li><i className="fa fa-calendar"></i> {this.props.date}</li>
                         <li><i className="fa fa-user"></i> {this.props.posted_by}</li>
                         <li><i className="fa fa-file-text"></i> {this.props.category_name}</li>
-                        <li><i className="fa fa-comments"></i> 0</li>
                     </ul>
                     <p>
                         {

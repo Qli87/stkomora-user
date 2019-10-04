@@ -3,11 +3,11 @@ import Biography from '../components/Biography';
 import { getBiography_request } from '../actions/member.actions';
 
 const mapStateToProps = state => ({
-    memberDetails: state.memberReducer.memberDetails[0]
+    memberDetails: state.memberReducer.memberDetails
 })
 
 const mapDispatchToProps = dispatch => ({
-    getBiography: () => dispatch(getBiography_request())
+    getBiography: (id) => dispatch(getBiography_request(id))
 })
 
 const BiographyCnt = connect (

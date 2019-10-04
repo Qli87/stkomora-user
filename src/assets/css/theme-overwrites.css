@@ -8,7 +8,7 @@
 }
 
 .pageHeader {
-    padding: 85px;
+    padding: 30px;
 }
 
 .pageDetailsPadding {
@@ -69,4 +69,20 @@
   border-bottom: 1px solid lightblue;
   border-top: 1px solid lightblue;
   cursor: pointer;
+}
+
+.hpParagraph {
+  font-weight: bold;
+  color: white;
+  /* color: darkblue; */
+}
+
+.gradientIconStyle {
+  background-color: #00DCF4;
+}
+
+.downloadDoc {
+  background-color: #ef662f;
+  font-weight: bold;
+  border: 1px solid #ef662f;
 }

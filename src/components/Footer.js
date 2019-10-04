@@ -1,11 +1,13 @@
 import React from 'react'
+import NforFooter from './singleComponents/NforFooter';
 
 export default class Footer extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            details: []
+            details: [],
+            news: []
         }
     }
 
@@ -15,12 +17,14 @@ export default class Footer extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState({
-            details: nextProps.details[0]
+            details: nextProps.details,
+            news: nextProps.news
         })
     }
 
     setup = () => {
         this.props.getDetails();
+        this.props.getNews();
     }
 
     render() {
@@ -32,7 +36,7 @@ export default class Footer extends React.Component {
                             <div className="col-md-4 col-sm-4">
                                 <div className="widget">
                                     <h5>Društvene mreže</h5>
-                                    <img src="logo.png" className="marginbot15" alt="" />
+                                    <img src="logo.png" className="marginbot15" style={{'height':'100px'}} alt="" />
                                     <p>
                                         Sve aktuelnosti vezane za komoru možete pratiti na našim nalozima na društvenim mrežama.
                                     </p>
@@ -60,7 +64,17 @@ export default class Footer extends React.Component {
                                 <div className="widget">
                                     <h5>Vijesti</h5>
                                     <ul className="recent-post">
-                                        <li>
+                                        {
+                                            this.state.news.map(n => {
+                                                return <NforFooter 
+                                                    key={n.id}
+                                                    id={n.id}
+                                                    title={n.title}
+                                                />
+                                            })
+                                        }
+
+                                        {/* <li>
                                             <i className="fa fa-file-image-o post-data"></i>
                                             <h6><a href="#3123">Kongres1</a></h6>
                                         </li>
@@ -71,7 +85,7 @@ export default class Footer extends React.Component {
                                         <li>
                                             <i className="fa fa-file-text-o post-data"></i>
                                             <h6><a href="#213">Kongres3</a></h6>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </div>
                             </div>
@@ -90,9 +104,9 @@ export default class Footer extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="subfooter">
+                    {/* <div className="subfooter">
                         <p>2019 &copy; Copyright All rights Reserved.</p>
-                    </div>
+                    </div> */}
                 </footer>
             </div>
         )

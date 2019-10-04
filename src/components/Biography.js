@@ -12,8 +12,9 @@ class Biography extends React.Component {
     }
 
     componentDidMount() {
-        this.setup()
+        this.props.getBiography(parseInt(this.props.biographyParams.id))
     }
+
 
     componentWillReceiveProps(nextProps) {
         this.setState({
@@ -21,11 +22,7 @@ class Biography extends React.Component {
         })
     }
 
-    setup = () => {
-        this.props.getBiography()
-    }
- 
-
+  
     render() {
         return(
             <div>

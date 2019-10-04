@@ -13,7 +13,7 @@ export default class AdvSlider extends React.Component {
                             </blockquote>
                         </div>
                         <div className="testimo-author">
-                            <a href="#1"><img src="img/avatar01.jpg" className="testimo-avatar" alt=""/></a>
+                            <a href="#1"><img src="img/avatar01.png" className="testimo-avatar" alt=""/></a>
                             <span>{this.props.title}</span>
                             <a href='#ds'>{this.props.phone}</a>
                         </div>

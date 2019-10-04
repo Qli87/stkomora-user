@@ -5,6 +5,7 @@ import { categoriesSaga } from './category.saga';
 import { advertismentSaga } from './advertisment.saga'
 import { companyDetailsSaga } from './companyDetails.saga';
 import { aboutSaga } from './about.saga'
+import { homePageSaga } from './homePage.saga';
 
 export default function* rootSaga() {
     yield all ([
@@ -13,6 +14,7 @@ export default function* rootSaga() {
         categoriesSaga(),
         advertismentSaga(),
         companyDetailsSaga(),
-        aboutSaga()
+        aboutSaga(),
+        homePageSaga()
     ])
 }

@@ -38,13 +38,14 @@ export default class Header extends React.Component {
                         {/* ends header navigation */}
 
                         <div className="collapse navbar-collapse" id="navbar-menu">
-                            <ul className="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
-                                <li><NavLink to="/pocetna">Početna</NavLink></li>
-                                <li><NavLink to="/onama">O nama</NavLink></li>
-                                <li><NavLink to="/vijesti">Vijesti</NavLink></li>
-                                <li><NavLink to="/clanovi">Članovi komore</NavLink></li>
-                                <li><NavLink to="/oglasi">Oglasi</NavLink></li>
-                                <li><NavLink to="/kontakt">Kontakt</NavLink></li>
+                        {/* data-in="fadeInDown" data-out="fadeOutUp" */}
+                            <ul className="nav navbar-nav">
+                                <li><NavLink to="/pocetna">POČETNA</NavLink></li>
+                                <li><NavLink to="/onama">O NAMA</NavLink></li>
+                                <li><NavLink to="/vijesti">VIJESTI</NavLink></li>
+                                <li><NavLink to="/clanovi">ČLANOVI KOMORE</NavLink></li>
+                                <li><NavLink to="/oglasi">OGLASI</NavLink></li>
+                                <li><NavLink to="/kontakt">KONTAKT</NavLink></li>
                             </ul>
                         </div>
                     </div>

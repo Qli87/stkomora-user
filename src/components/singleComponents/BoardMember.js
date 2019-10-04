@@ -4,11 +4,6 @@ import { withRouter } from 'react-router-dom'
 
 class BoardMember extends React.Component {
 
-    constructor(props) {
-        super(props)
-
-        this.biographyPath = this.biographyPath.bind(this)
-    }
 
     biographyPath(id) {
         const path = '/biografija/'+id

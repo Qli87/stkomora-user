@@ -286,7 +286,8 @@ aside .widget .widget-head:after,
 .inputfile-default.has-focus + label,
 .inputfile-default + label:hover,
 .wrap-estate h5 i{
-	background-color: #ef662f !important;
+	/* background-color: #ef662f !important; */
+    background-color: #5F8A9E !important;
 }
 
 .checkator_source:checked+.checkator_element:after,
@@ -386,7 +387,7 @@ ul.top-share li a:hover,
 .grider a.active:hover,
 .flex-control-thumbs .flex-active,
 .flex-control-thumbs img:hover{
-    border-color: #ef662f;
+    border-color: darkgray;
 }
 
 .object,

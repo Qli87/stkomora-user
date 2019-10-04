@@ -60,6 +60,24 @@ export default function newsReducer(state = initialState, action) {
                 loading: false,
                 error: action.payload
             }
+        case newsConstants.GETNEWSFORFOOTER_REQUEST:
+            return {
+                ...state,
+                loading: true,
+                news: []
+            }
+        case newsConstants.GETNEWSFORFOOTER_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                news: action.payload
+            }
+        case newsConstants.GETNEWSFORFOOTER_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
         default:
             return state
     }

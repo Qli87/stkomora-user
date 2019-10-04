@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { userPath } from './constants/user.constants'
-import HomePage from './components/HomePage';
 import ContactCnt from './containers/ContactCnt';
 import Header from './components/Header';
 import AboutCnt from './containers/AboutCnt';
@@ -12,12 +11,13 @@ import NewsForCategoryCnt from './containers/NewsForCategoryCnt';
 import AdvertismentCnt from './containers/AdvertismentCnt';
 import FooterCnt from './containers/FooterCnt';
 import MembersCnt from './containers/MembersCnt';
+import HomePageCnt from './containers/HomePageCnt';
 
 const routes = [
     {
         path: userPath.homePage,
         exact: true,
-        main: () => <div> <HomePage /> </div>
+        main: () => <div> <HomePageCnt /> </div>
     },
     {
         path: userPath.about,
@@ -33,7 +33,7 @@ const routes = [
     },
     {
         path: userPath.category+'/:id',
-        main: ({match}) => <div category={match.params}> <NewsForCategoryCnt /> </div>
+        main: ({match}) => <div> <NewsForCategoryCnt category={match.params} /> </div>
     },
     {
         path: userPath.noveltyDetails+'/:id',

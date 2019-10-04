@@ -100,120 +100,92 @@ class About extends React.Component {
                         <div className="row">
                             <div className="col-md-8">
                                 <div id="wrap-progress" className="wrap-progress">
-
-
-
-
-{/* <div className="progress">
-  <div className="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-         <span className="value-progress">9</span>
-         <span className="data-progress">Podgorica</span>
-  </div>
-</div>
-<div className="progress">
-  <div className="progress-bar" role="progressbar" style={{'width' : '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-        <span className="value-progress">9</span>
-         <span className="data-progress">Podgorica</span>
-  </div>
-</div>
-<div className="progress">
-  <div className="progress-bar" role="progressbar" style={{'width' : '50%'}} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div className="progress">
-  <div className="progress-bar" role="progressbar" style={{'width' : '75%'}} aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div className="progress">
-  <div className="progress-bar" role="progressbar" style={{'width' : '100%'}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-</div> 
-
-
-                                    {/* ukupno 31 clan */}
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="9">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="29">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Podgorica</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="1">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="3">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Danilovgrad</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="4">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="12">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Nikšić, Šavnik i Plužine</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="1">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="3">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Cetinje</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="2">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="6.5">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Bar</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="1">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="3">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Budva</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="1">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="3">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Herceg Novi</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="2">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="6.5">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Kotor</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="1">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="3">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Tivat</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="1">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="3">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Ulcinj</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="2">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="6.5">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Bijelo Polje</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="2">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="6.5">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Berane, Petnjica, Andrijevica</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="2">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="6.5">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Rožaje, Plav, Gusinje</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="1">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="3">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Pljevlja i Žabljak</span>
                                         </div>
                                     </div>
                                     <div className="progress type3">
-                                        <div className="progress-bar" role="progressbar" data-value-progress="1">
+                                        <div className="progress-bar" role="progressbar" data-value-progress="3">
                                             <span className="value-progress">00</span>
                                             <span className="data-progress">Mojkovac, Kolašin</span>
                                         </div>

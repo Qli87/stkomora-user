@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    getNews: () => dispatch(getNewsForCategory_request()),
+    getNews: (id) => dispatch(getNewsForCategory_request(id)),
     getCategories: () => dispatch(getCategories_request())
 })
 

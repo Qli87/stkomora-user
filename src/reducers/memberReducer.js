@@ -62,7 +62,8 @@ export default function memberReducer(state = initialState, action) {
             return {
                 ...state,
                 loading: false,
-                memberDetails: action.payload
+                memberDetails: action.payload,
+                boardMembers: state.boardMembers
             }
         case memberConstant.GETBIOGRAPHY_FAILURE:
             return {

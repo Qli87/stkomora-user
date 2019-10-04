@@ -833,10 +833,12 @@ Intro
 	background: -ms-linear-gradient(top, rgba(248,248,248,1) 0%, rgba(243,243,243,1) 100%);
 	background: linear-gradient(to bottom, rgba(248,248,248,1) 0%, rgba(243,243,243,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f3f3f3', GradientType=0 );
-	background-image:url(../img/page-header5.jpg);
+	background-image:url(../img/gradient-final.png);
+	/* background-image:url(../img/page-header5.jpg); */
 	background-repeat:no-repeat;
 	background-position:center center;
 	background-size:cover;
+	color:white;
 }
 
 .intro-wrapp ul.intro-icon-line{
@@ -988,7 +990,7 @@ Inner head
 	background-color: -ms-linear-gradient(top, rgba(248,248,248,1) 0%, rgba(243,243,243,1) 100%);
 	background-color: linear-gradient(to bottom, rgba(248,248,248,1) 0%, rgba(243,243,243,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f3f3f3', GradientType=0 );
-	background-image:url(../img/page-header2.jpg);
+	background-image:url(../img/page-header2.png);
 	background-repeat:no-repeat;
 	background-position:center center;
 	background-size:cover;

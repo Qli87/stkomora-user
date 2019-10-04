@@ -27,8 +27,8 @@ export function* getBoardMembers() {
     }
 }
 
-export function* getBiography() {
-    const response = yield call(getBiography_api)
+export function* getBiography(action) {
+    const response = yield call(getBiography_api, action.payload)
     if(!response || !response.data) {
         return yield put(getBiography_failure('Internal server error for loading biography'))
     }

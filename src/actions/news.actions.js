@@ -62,3 +62,24 @@ export function getNewsForCategory_failure(news) {
         payload: news
     }
 }
+
+export function getNewsForFooter_request(news) {
+    return {
+        type: newsConstants.GETNEWSFORFOOTER_REQUEST,
+        payload: news
+    }
+}
+
+export function getNewsForFooter_success(news) {
+    return {
+        type: newsConstants.GETNEWSFORFOOTER_SUCCESS,
+        payload: news
+    }
+}
+
+export function getNewsForFooter_failure(error) {
+    return {
+        type: newsConstants.GETNEWSFORFOOTER_FAILURE,
+        payload: error
+    }
+}

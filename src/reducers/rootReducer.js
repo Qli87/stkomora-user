@@ -5,6 +5,7 @@ import categoryReducer from './categoryReducer'
 import advertismentReducer from './advertismentReducer'
 import companyDetailsReducer from './companyDetailsReducer'
 import aboutReducer from './aboutReducer'
+import homePageReducer from './homePageReducer'
 
 export default combineReducers({
     memberReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
     categoryReducer,
     advertismentReducer,
     companyDetailsReducer,
-    aboutReducer
+    aboutReducer,
+    homePageReducer
 })

@@ -26,7 +26,7 @@ class NewsForCategory extends React.Component {
     }
 
     setup = () => {
-        this.props.getNews()
+        this.props.getNews(parseInt(this.props.category.id))
         this.props.getCategories()
     }
 
@@ -34,7 +34,6 @@ class NewsForCategory extends React.Component {
         return (
             <div>
                 <PageHeader />
-
                 <div className="contain-wrapp padding-bot50">	
 		            <div className="container">
 			            <div className="row">
