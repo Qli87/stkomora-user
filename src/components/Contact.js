@@ -17,7 +17,7 @@ class Contact extends React.Component {
 
 	componentWillReceiveProps(nextProps) {
 		this.setState({
-			details: nextProps.details[0]
+			details: nextProps.details
 		})
 	}
 
@@ -75,8 +75,8 @@ class Contact extends React.Component {
 									<i className="fa fa-home fa-2x fa-primary"></i>
 									<h6>Adresa</h6>
 									<p>
-									{ this.state.details.address }<br />
-									{ this.state.details.city }
+										{ this.state.details.address }<br />
+										{ this.state.details.city }
 									</p>
 								</li>
 								<li>

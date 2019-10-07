@@ -36,6 +36,7 @@ class About extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log('next props: ',nextProps);
         // console.log(nextProps.content[0].aboutContent);
         let aboutContent = ''
         let aboutTitle = ''

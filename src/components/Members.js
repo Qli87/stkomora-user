@@ -17,7 +17,7 @@ class Members extends React.Component {
                 direction: 'desc'
             },
             activePage: 1,
-            usersPerPage: 2,
+            usersPerPage: 20,
             numberOfPagButton: 5,
             totalMembers: 0,
             searchField: false,
@@ -145,7 +145,12 @@ class Members extends React.Component {
         })
     }
 
-    
+    changeRowsNumber = (number) => {
+        console.log(number);
+        this.setState({
+            usersPerPage: number
+        })
+    }
 
     render() {
         const options = [
@@ -161,7 +166,7 @@ class Members extends React.Component {
                             <div className="row membersPading">
                                 <div className="col-sm-12">
                                     <div className="membersSelect">
-                                        <Select options={options} placeholder="Broj redova" s/>
+                                        {/* <Select options={options} placeholder="Broj redova"/> */}
                                     </div>
                                     <div className="membersSearch">
                                         <label>
