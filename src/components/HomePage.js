@@ -26,19 +26,21 @@ class HomePage extends React.Component {
                 <div id="slider-wrapper">
                     <div id="layerslider" style={{'width':'100%','height':'660px', 'backgroundImage':'url(../img/home-final.jpg)'}}>
                         <div className="ls-slide" data-ls="slidedelay:8000;transition2d:1,2,3,4;">
-                            <img src="img/slide-bg04.jpg" className="ls-bg" alt="Slide background" />
-                            <img src="img/imac.png" className="ls-l"
-                                style={{'top':'240px','left':'50%'}}
-                                data-ls="offsetxin:0;
-                                offsetyin:top;
-                                durationin:1000;
-                                delayin:500;
-                                easingin:easeOutBack;
-                                easingout:easeOutQuart;
-                                offsetyout:top;
-                                offsetxout:0;
-                                durationout:1000;" alt="" />
-                            <img src="img/macbook.png" className="ls-l"
+                            {/* <img src="img/slide-bg04.jpg" className="ls-bg" alt="Slide background" /> */}
+                           {/* <div className="ls-layer">
+                                <img src="img/imac.png" className="ls-l"
+                                    style={{'top':'240px','left':'50%'}}
+                                    data-ls="offsetxin:0;
+                                    offsetyin:top;
+                                    durationin:1000;
+                                    delayin:500;
+                                    easingin:easeOutBack;
+                                    easingout:easeOutQuart;
+                                    offsetyout:top;
+                                    offsetxout:0;
+                                    durationout:1000;" alt="" />
+                            </div>
+                             <img src="img/macbook.png" className="ls-l"
                                 style={{'top':'345px','left':'34%'}}
                                 data-ls="offsetxin:left;
                                 offsetyin:0;
@@ -70,12 +72,12 @@ class HomePage extends React.Component {
                                 easingout:easeOutQuart;
                                 offsetyout:0;
                                 offsetxout:right;
-                                durationout:1000;" alt="" />
+                                durationout:1000;" alt="" /> */}
                             <h2 className="ls-l headline3"
                                 style={{'top':'110px','left':'50%'}}
                                 data-ls="offsetxin:0;
-                                durationin:2500;
-                                delayin:4500;
+                                durationin:3500;
+                                delayin:1500;
                                 easingin:easeOutElastic;
                                 rotatexin:90;
                                 transformoriginin:50% top 0;
@@ -83,8 +85,8 @@ class HomePage extends React.Component {
                                 durationout:1000;
                                 rotatexout:90;
                                 transformoriginout:50% bottom 0;">
-                                Inspired is multipurpose template
-                                </h2>
+                                Stomatološka komora Crne Gore
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -99,27 +101,21 @@ class HomePage extends React.Component {
                                         <div className="col-icon absolute-left">
                                         <i className="fa fa-info fa-2x icon-square fa-default gradientIconStyle"></i>
                                         <h5 className="hpParagraph">Cilj komore?</h5>
-                                        <p className="hpParagraph">
-                                        {this.state.details.goal}
-                                        </p>
+                                        <p className="hpParagraph">{this.state.details.goal}</p>
                                     </div>
                                     </li>
                                     <li>
                                         <div className="col-icon absolute-left">
                                             <i className="fa fa-book fa-2x icon-square fa-default gradientIconStyle"></i>
                                             <h5 className="hpParagraph">Licenca?</h5>
-                                            <p className="hpParagraph">
-                                            {this.state.details.licence}
-                                            </p>
+                                            <p className="hpParagraph">{this.state.details.licence}</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="col-icon absolute-left">
                                             <i className="fa fa-home fa-2x icon-square fa-default gradientIconStyle"></i>
                                             <h5 className="hpParagraph">O komori</h5>
-                                            <p className="hpParagraph">
-                                            {this.state.details.about}
-                                            </p>
+                                            <p className="hpParagraph">{this.state.details.about}</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -136,9 +132,7 @@ class HomePage extends React.Component {
                             <div className="col-md-6 col-md-offset-3">
                                 <div className="title-head centered">
                                     {/* <h4>Članstvo u komori</h4> */}
-                                    <p>
-                                        {this.state.details.titleh1}
-                                    </p>
+                                    <p>{this.state.details.titleh1}</p>
                                 </div>
                             </div>
                         </div>
@@ -149,9 +143,7 @@ class HomePage extends React.Component {
                                     <div className="caption">
                                         <i className="fa fa-briefcase fa-3x icon-circle fa-default"></i>
                                         <h5>Članovi komore</h5>
-                                        <p>
-                                            {this.state.details.titleMembers}
-                                        </p>
+                                        <p>{this.state.details.titleMembers}</p>
                                     </div>
                                 </div>
                             </div>
@@ -161,9 +153,7 @@ class HomePage extends React.Component {
                                     <div className="caption">
                                         <i className="fa fa-headphones fa-3x icon-circle fa-default"></i>
                                         <h5>Član komore</h5>
-                                        <p>
-                                            {this.state.details.titleMember}
-                                        </p>
+                                        <p>{this.state.details.titleMember}</p>
                                     </div>
                                 </div>
                             </div>
@@ -173,9 +163,7 @@ class HomePage extends React.Component {
                                     <div className="caption">
                                         <i className="fa fa-flask fa-3x icon-circle fa-default"></i>
                                         <h5>Počastni članovi</h5>
-                                        <p>
-                                            {this.state.details.titleMemberH}
-                                        </p>
+                                        <p>{this.state.details.titleMemberH}</p>
                                     </div>
                                 </div>
                             </div>
