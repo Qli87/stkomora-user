@@ -2,14 +2,22 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import PageHeader from './singleComponents/PageHeader';
 import AdvSlider from './singleComponents/AdvSlider';
-import Adv from './singleComponents/Adv';
+import Pagination from 'react-js-pagination'
+
+// import Adv from './singleComponents/Adv';
 
 class Advertisment extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            advs: []
+            advs: [],
+            activePage: 1,
+            newsPerPage: 5,
+            numberOfPagButton: 5,
+            totalAdvs: 0,
+            data: [],
+            advertisments: []
         }
     }
 
@@ -18,8 +26,23 @@ class Advertisment extends React.Component {
     }
 
     componentWillReceiveProps(nextProps){
+        let pagAdvs = []
+        if(nextProps.advertisments.length > 0) {
+            pagAdvs = nextProps.advertisments.slice(this.state.activePage*this.state.newsPerPage - this.state.newsPerPage,
+                this.state.activePage*this.state.newsPerPage, [])
+        }
         this.setState({
-            advs: nextProps.advertisments
+            advertisments: nextProps.advertisments,
+            data: pagAdvs,
+            totalAdvs: nextProps.advertisments.length
+        })
+    }
+
+    setActivePage = (currentPage) => {
+        this.setState({
+            activePage: currentPage,
+            data: this.state.advertisments.slice(currentPage*this.state.newsPerPage - this.state.newsPerPage,
+                currentPage*this.state.newsPerPage, [])
         })
     }
 
@@ -35,34 +58,30 @@ class Advertisment extends React.Component {
                     <div className="row pageAdvPadding">
                         <h5>Oglasi:</h5>
                         <div className="col-md-12 col-sm-12">
-                            <div id="testimoni" className="owl-carousel botControls-right">
+                            <div id="testimoni" className="botControls-right">
                                 <div className="item">
                                     {
-                                    this.state.advs.map(adv => {
-                                        return <AdvSlider 
-                                            key={adv.id}
-                                            id={adv.id}
-                                            full_text={adv.full_text}
-                                            title={adv.title}
-                                            phone={adv.phone}
-                                        />
-                                    })
-                                }
+                                        this.state.data.map(adv => {
+                                            return <AdvSlider 
+                                                key={adv.id}
+                                                id={adv.id}
+                                                full_text={adv.full_text}
+                                                title={adv.title}
+                                                phone={adv.phone}
+                                            />
+                                        })
+                                    }
                                 </div>
                             </div>
                         </div>
                     </div>
-                        <nav>
-                            <ul className="pagination navPadding">
-                                {/* <li className="disabled"><a href="#1" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li> */}
-                                <li className="active"><a href="#1">1</a></li>
-                                <li><a href="#1">2</a></li>
-                                <li><a href="#2">3</a></li>
-                                <li><a href="#3">4</a></li>
-                                <li><a href="#4">5</a></li>
-                                {/* <li><a href="#5" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li> */}
-                            </ul>
-                        </nav>  
+                        <Pagination
+                            activePage={this.state.activePage}
+                            itemsCountPerPage={this.state.newsPerPage}
+                            totalItemsCount={this.state.totalAdvs}
+                            pageRangeDisplayed={this.state.numberOfPagButton}
+                            onChange={this.setActivePage}
+                        />
                 </div>
             </div>
         )

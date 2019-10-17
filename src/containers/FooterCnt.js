@@ -5,7 +5,7 @@ import { getNewsForFooter_request } from '../actions/news.actions';
 
 const mapStateToProps = state => ({
     details: state.companyDetailsReducer.details,
-    news: state.newsReducer.news
+    news: state.newsReducer.newsForFooter
 })
 
 const mapDispatchToProps = dispatch => ({

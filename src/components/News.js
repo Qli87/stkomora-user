@@ -3,6 +3,9 @@ import { withRouter } from 'react-router-dom'
 import PageHeader from './singleComponents/PageHeader';
 import Category from './singleComponents/Category';
 import Novelty from './singleComponents/Novelty';
+import PopularNews from './singleComponents/PopularNews';
+import Pagination from 'react-js-pagination'
+
 
 class News extends React.Component {
 
@@ -10,7 +13,13 @@ class News extends React.Component {
         super(props)
         this.state = {
             categories: [],
-            news: []
+            news: [],
+            activePage: 1,
+            newsPerPage: 5,
+            numberOfPagButton: 5,
+            totalAdvs: 0,
+            data: [],
+            popularNews: []
         }
     }
 
@@ -19,15 +28,32 @@ class News extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        let pagNews = []
+        if(nextProps.news.length > 0) {
+            pagNews = nextProps.news.slice(this.state.activePage*this.state.newsPerPage - this.state.newsPerPage,
+                this.state.activePage*this.state.newsPerPage, [])
+        }
         this.setState({
+            popularNews: nextProps.popularNews,
             categories: nextProps.categories,
-            news: nextProps.news
+            news: nextProps.news,
+            data: pagNews,
+            totalAdvs: nextProps.news.length
+        })
+    }
+
+    setActivePage = (currentPage) => {
+        this.setState({
+            activePage: currentPage,
+            data: this.state.news.slice(currentPage*this.state.newsPerPage - this.state.newsPerPage,
+                currentPage*this.state.newsPerPage, [])
         })
     }
 
     setup = () => {
         this.props.getCategories()
         this.props.getNews()
+        this.props.getPopularNews()
     }
 
     render() {
@@ -56,22 +82,15 @@ class News extends React.Component {
                                     <div className="widget">
                                         <h5 className="widget-head">Popularni članci</h5>
                                         <div className="recent-widget">
-                                            <div className="post">
-                                                <a href="#1" className="post-thumbnail"><img src="img/news.jpg" className="img-thumb" alt="" /></a>
-                                                <h6><a href="#1">Electram definitiones id duo, eu vidit voluptaria quo vel.</a></h6>
-                                            </div>
-                                            <div className="post">
-                                            <a href="#1" className="post-thumbnail"><img src="img/news.jpg" className="img-thumb" alt="" /></a>
-                                                <h6><a href="#1">Option phaedrum vel ea, at vix eruditi detraxit graeci.</a></h6>
-                                            </div>
-                                            <div className="post">
-                                                <a href="#1" className="post-thumbnail"><img src="img/news.jpg" className="img-thumb" alt="" /></a>
-                                                <h6><a href="#1">Fabellas moderatius cum in, pro labitur invenire in ullum.</a></h6>
-                                            </div>
-                                            <div className="post">
-                                                <a href="#1" className="post-thumbnail"><img src="img/news.jpg" className="img-thumb" alt="" /></a>
-                                                <h6><a href="#1">Senserit eloquentiam eu vel, et per probo noster eu labor.</a></h6>
-                                            </div>
+                                            {
+                                                this.state.popularNews.map(news => {
+                                                    return <PopularNews
+                                                        key={news.id}
+                                                        id={news.id}
+                                                        title={news.title}
+                                                     />
+                                                })
+                                            }
                                         </div>
                                     </div>
                                     <div className="widget">
@@ -85,7 +104,7 @@ class News extends React.Component {
 
                             <div className="col-md-9 col-sm-9">
                                 {
-                                    this.state.news.map(item => {
+                                    this.state.data.map(item => {
                                         return <Novelty 
                                             key={item.id}
                                             id={item.id}
@@ -97,20 +116,14 @@ class News extends React.Component {
                                         />
                                     })
                                 }
+                                <Pagination
+                                    activePage={this.state.activePage}
+                                    itemsCountPerPage={this.state.newsPerPage}
+                                    totalItemsCount={this.state.totalAdvs}
+                                    pageRangeDisplayed={this.state.numberOfPagButton}
+                                    onChange={this.setActivePage}
+                                />
                             </div>
-
-                            <nav>
-                                <ul className="pagination">
-                                    {/* <li className="disabled"><a href="#1" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li> */}
-                                    <li className="active"><a href="#1">1</a></li>
-                                    <li><a href="#1">2</a></li>
-                                    <li><a href="#2">3</a></li>
-                                    <li><a href="#3">4</a></li>
-                                    <li><a href="#4">5</a></li>
-                                    {/* <li><a href="#5" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li> */}
-                                </ul>
-                            </nav>
-
                         </div>
                     </div>
                 </div>

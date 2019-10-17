@@ -83,3 +83,24 @@ export function getNewsForFooter_failure(error) {
         payload: error
     }
 }
+
+export function getPopularNews_request(news) {
+    return {
+        type: newsConstants.GETPOPULARNEWS_REQUEST,
+        payload: news
+    }
+}
+
+export function getPopularNews_success(news) {
+    return {
+        type: newsConstants.GETPOPULARNEWS_SUCCESS,
+        payload: news
+    }
+}
+
+export function getPopularNews_failure(error) {
+    return {
+        type: newsConstants.GETPOPULARNEWS_FAILURE,
+        payload: error
+    }
+}

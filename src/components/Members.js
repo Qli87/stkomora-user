@@ -1,8 +1,9 @@
+                    
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import Member from './singleComponents/Member';
 import PageHeader from './singleComponents/PageHeader';
-import Select from 'react-select'
+// import Select from 'react-select'
 import Pagination from 'react-js-pagination'
 
 class Members extends React.Component {
@@ -153,11 +154,7 @@ class Members extends React.Component {
     }
 
     render() {
-        const options = [
-            {value: 10, label: '10'},
-            {value: 20, label: '20'},
-            {value: 50, label: '50'}
-        ]
+
         return(
             <div>
                 <PageHeader />

@@ -2,7 +2,9 @@ import { newsConstants } from '../constants/news.constants'
 
 const initialState = {
     news: [],
-    noveltyDetails: []
+    noveltyDetails: [],
+    newsForFooter: [],
+    popularNews: []
 }
 
 export default function newsReducer(state = initialState, action) {
@@ -34,6 +36,7 @@ export default function newsReducer(state = initialState, action) {
             return {
                 ...state,
                 loading: false,
+                news: state.news,
                 noveltyDetails: action.payload
             }
         case newsConstants.GETNOVELTYDETAILS_FAILURE:
@@ -70,9 +73,28 @@ export default function newsReducer(state = initialState, action) {
             return {
                 ...state,
                 loading: false,
-                news: action.payload
+                news: state.news,
+                newsForFooter: action.payload
             }
         case newsConstants.GETNEWSFORFOOTER_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
+        case newsConstants.GETPOPULARNEWS_REQUEST:
+            return {
+                ...state,
+                loading: true
+            }
+        case newsConstants.GETPOPULARNEWS_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                news: state.news,
+                popularNews: action.payload
+            }
+        case newsConstants.GETPOPULARNEWS_FAILURE:
             return {
                 ...state,
                 loading: false,
